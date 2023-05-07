@@ -2,7 +2,7 @@ var displayHoras = document.querySelector(".horas");
 var displayMinutos = document.querySelector(".minutos");
 var displaySegundos = document.querySelector(".segundos");
 
-setInterval(function(){
+function passarTempo(){
 
 	var tempo = new Date();
 	var hr = tempo.getHours();
@@ -22,4 +22,9 @@ setInterval(function(){
 	displayHoras.textContent = hr;
 	displayMinutos.textContent = mn;
 	displaySegundos.textContent = sd;
-});
+}
+
+window.onload = function() { 
+
+	setInterval(passarTempo, 500);
+}
